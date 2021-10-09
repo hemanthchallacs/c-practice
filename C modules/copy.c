@@ -5,6 +5,9 @@ void * copy(const void *, void *, size_t);
 int main()
 {
     char src[] = "hello";
+    char *txt = "hello";
+    src[3] = 'z';
+    // txt[3] ='z';
     printf("size of src %ld\n", sizeof(src));
     char dest[sizeof(src)];
     copy(src, dest, sizeof(src));
@@ -18,7 +21,7 @@ void * copy(const void *src, void *dest, size_t size){
         char *s = (char *)src;
         for(int i=0; i<size; i++)
         {
-            *(dest+i) = *(src+i);
+            *(d+i) = *(s+i);
         }
     return dest;
 }
